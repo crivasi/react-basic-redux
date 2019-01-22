@@ -1,0 +1,13 @@
+.button {
+    padding: 1.2em;
+    width: 4.5em;
+    height: 4.5em;
+    font-size: .8rem;
+    border: 2px solid var(--background-default);
+    margin: .9em 1em;
+    cursor: pointer;
+    background-color: var(--background-default);
+    border-radius: 50%;
+    box-shadow: 0 5px 6px -5px #6f6f6f;
+    font-weight: 700;
+}

@@ -1,0 +1,31 @@
+.counter-component {
+    --background-default: #f2f2f2;
+    --background-active: #0099ff;
+    --hue-active: 204;
+}
+
+.action {
+    transition: .25s all;
+}
+
+.action:hover {
+    background-color: var(--background-active);
+    border-color: var(--background-active);
+    color: white; 
+}
+
+.action:active {
+    --hue-active-dark: hsl(var(--hue-active),100%,40%);
+    border-color: var(--hue-active-dark);
+    background-color: var(--hue-active-dark);
+    box-shadow: 0 3px 2px 1px var(--hue-active-dark) inset;
+    color: white;
+}
+
+.number-count {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 5px;
+    width: 50px;
+    display: inline-block;
+}

@@ -1,3 +1,12 @@
+* {
+  outline: none;
+}
+
+body {
+  color: #575757;
+  min-height: 100hv;
+}
+
 .App {
   text-align: center;
 }
@@ -9,13 +18,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 20px;
 }
 
 .App-link {
