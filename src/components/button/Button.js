@@ -2,9 +2,9 @@ import React from "react";
 import './Button.css';
 
 export const Button = (props) => (
-    <button
+    <button 
         className="button action" 
-        onClick={props.actionButton}
+        onClick={props.click ? props.click : null}
     >
         {props.title}
     </button>

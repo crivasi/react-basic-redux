@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+
+import { connect } from 'react-redux'; //se necesita para conectar los componentes con redux por medio de mapStateProps
+
 import "./Counter.css";
 
 import { Button } from "./../button/Button";
 
-export class Counter extends Component {
-    constructor() {
-        super();
-        this.state = {counter: 0};
+class Counter extends Component {
+    increment  = () => {
+        this.props.dispatch({ type: 'INCREMENT' })
+    }
+
+    decrement  = () => {
+        this.props.dispatch({ type: 'DECREMENT' })
     }
 
     render() {
@@ -18,25 +24,23 @@ export class Counter extends Component {
                 <div>
                     <Button 
                         title="-" 
-                        actionButton={() => 
-                            this.setState(
-                                prevState => 
-                                    ({ counter: prevState.counter - 1 })
-                        )}
+                        click={this.decrement}
                     />
                     <span className="number-count">
-                        {this.state.counter}
+                        { this.props.counter.counter }
                     </span>
                     <Button 
                         title="+" 
-                        actionButton={() => 
-                            this.setState(
-                                prevState => 
-                                    ({ counter: prevState.counter + 1 })
-                        )}
+                        click={this.increment}
                     />
                 </div>
             </div>
         )
     }
 }
+
+const mapStateProps = state => ({ 
+    counter: state.counterReducer
+});
+
+export default connect(mapStateProps)(Counter);
